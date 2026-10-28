@@ -1,6 +1,9 @@
 ---
 name: 高德地点步行推荐
 description: 用户需要根据起点、地点类型、步行时间上限，查找附近可以步行到达的场所，最多返回3个地点。
+tools:
+  - search_places
+  - walking_route
 instructions: |
 1. 解析用户请求，提取起点坐标、POI类型、步行时间上限。起点坐标由评测平台传入，用户没有指定时间上限时不做时间过滤。
 2. 调用search_places工具，传入起点、POI类型，获取候选地点名称、地址、经纬度。
@@ -28,7 +31,4 @@ instructions: |
 
 约束：
 必须使用步行规划接口返回的耗时，不能用直线距离估算时间；最多返回3个地点；不做多轮记忆；不规划多点路线；工具报错不能虚构数据。
-tools:
-  - search_places
-  - walking_route
 ---
